@@ -8,27 +8,50 @@ function getComputerChoice() {
 
     if (choice === 0){
 
-        return "Rock";
+        return "rock";
 
     }else if (choice === 1) {
 
-        return "Paper";
+        return "paper";
 
     }else {
 
-        return "Scissors";
+        return "scissors";
     }
 
 }
 
-console.log(getComputerChoice())
 
 function getHumanChoice() {
 
-    const choice = prompt("Rock,Paper or Scissors ?");
+    const choice = prompt("Rock,Paper or Scissors ?").toLowerCase();
 
     return choice;
 }
 
-console.log(getHumanChoice())
+function playRound(humanChoice, computerChoice) {
+  
+    if (humanChoice === computerChoice) {
+    return "Tie";
 
+}else if (humanChoice === "rock" && computerChoice === "scissors"){
+    humanScore++;
+    return "You win! " + humanChoice + " beats " + computerChoice;
+}else if (humanChoice === "paper" && computerChoice === "rock"){
+    humanScore++;
+    return "You win! " + humanChoice + " beats " + computerChoice;
+}else if (humanChoice === "scissors" && computerChoice === "paper" ){
+    humanScore++;
+    return "You win! " + humanChoice + " beats " + computerChoice;
+}else{
+    computerScore++;
+    return "You lose! " + computerChoice + " beats " + humanChoice;
+}
+        
+
+}
+
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+console.log(playRound(humanSelection, computerSelection));
