@@ -5,16 +5,25 @@ function getComputerChoice() {
     if (choice === 0){
 
         return "Rock";
-        
+
     }else if (choice === 1) {
 
         return "Paper";
 
     }else {
 
-        return "Sccissors";
+        return "Scissors";
     }
 
 }
 
 console.log(getComputerChoice())
+
+function getHumanChoice() {
+
+    const choice = prompt("Rock,Paper or Scissors ?");
+
+    return choice;
+}
+
+console.log(getHumanChoice())
